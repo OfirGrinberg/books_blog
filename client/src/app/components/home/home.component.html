@@ -1,0 +1,28 @@
+<div class="home" [ngClass]="{ blur: isAdd }">
+  <div class="admin-btns" *ngIf="isAdminUrl">
+    <button (click)="addClicked()">Add</button>
+    <button (click)="logout()">Logout</button>
+  </div>
+  <div
+    class="container"
+    *ngFor="let article of articles"
+    (click)="!del && goToArticle(article.id)"
+  >
+    <div class="image">
+      <img src="{{ article.image }}" alt="book cover" />
+    </div>
+    <div class="content">
+      <div class="header">
+        <p class="title">{{ article.title }}</p>
+        <button class="x-btn" *ngIf="isAdminUrl" (click)="remove(article.id)">
+          X
+        </button>
+      </div>
+      <p class="author">{{ article.author }}</p>
+      <p>{{ article.summary | limitWords: limit }}</p>
+    </div>
+  </div>
+</div>
+<div class="add" *ngIf="isAdd">
+  <app-add></app-add>
+</div>

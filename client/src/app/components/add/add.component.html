@@ -1,0 +1,13 @@
+<div class="app-add">
+   <div class="btn">
+      <button class="x-btn" (click)="articleService.reload()">X</button>
+   </div>
+   <form [formGroup]="formGroup" (ngSubmit)="articleService.add(formGroup.value)">
+      <input type="text" placeholder="Book title" formControlName="title">
+      <input type="text" placeholder="Author" formControlName="author">
+      <input type="text" placeholder="Book cover URL" formControlName="image">
+      <textarea rows="10" placeholder="Summary" formControlName="summary"></textarea>
+      <textarea rows="15" placeholder="Review" formControlName="review"></textarea>
+      <button type="submit">Save</button>
+   </form>
+</div>

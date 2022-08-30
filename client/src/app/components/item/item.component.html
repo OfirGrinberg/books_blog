@@ -1,0 +1,24 @@
+<div class="app-item">
+  <div class="user" *ngIf="!isEditClicked; else edit">
+    <div class="top">
+      <img src="{{ article.image }}" alt="book cover" />
+      <div class="txt-top">
+        <div class="header">
+          <p class="title">{{ article.title }}</p>
+          <button *ngIf="isAdminUrl" (click)="editClick()">Edit</button>
+          <button (click)="back()">Home</button>
+        </div>
+        <p class="author">by {{ article.author }}</p>
+        <p class="summary-title">summary:</p>
+        <p class="summary">{{ article.summary }}</p>
+      </div>
+    </div>
+    <div class="bottom">
+      <p class="review-title">Review:</p>
+      <p class="review">{{ article.review }}</p>
+    </div>
+  </div>
+  <ng-template #edit>
+    <app-edit [article]="article"></app-edit>
+  </ng-template>
+</div>

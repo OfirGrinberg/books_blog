@@ -1,0 +1,12 @@
+:host {
+   height: 100%;
+   display: grid;
+   place-items: center;
+}
+form {
+   // position: absolute;
+   // inset: 50% 40%;
+   display: flex;
+   flex-direction: column;
+}
+input, button {margin: 1%;}

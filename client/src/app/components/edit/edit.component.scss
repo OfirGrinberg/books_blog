@@ -1,0 +1,9 @@
+textarea { width: 90%; }
+.txt-top { width: -webkit-fill-available; }
+.image { width: min-content; }
+.btns {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   .cancel-btn {background-color: orangered;}
+}

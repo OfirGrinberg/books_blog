@@ -1,0 +1,26 @@
+:host {
+  display: grid;
+  place-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 20vh;
+  width: 80vw;
+  overflow: hidden;
+  margin-top: 1%;
+  &:hover { background-color: lavender; }
+}
+img { height: 100%; }
+.image { margin-right: 1%; }
+p { margin: 0.5rem;}
+.header, .admin-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.admin-btns { margin: 1%; }
+.title { font-size: 1.5rem; }
+.author { font-size: 1.2rem; }
+
+.blur { filter: blur(5px); }

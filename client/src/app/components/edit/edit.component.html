@@ -1,0 +1,49 @@
+<div class="admin">
+  <form
+    [formGroup]="formGroup"
+    (ngSubmit)="articleService.edit(article.id, formGroup.value)"
+  >
+    <div class="top">
+      <div class="image">
+        <img src="{{ article.image }}" alt="book cover" />
+        <textarea cols="50" class="img-url" formControlName="image"></textarea>
+      </div>
+      <div class="txt-top">
+        <div class="header">
+          <textarea
+            rows="1"
+            cols="50"
+            class="title"
+            formControlName="title"
+          ></textarea>
+        </div>
+        <textarea
+          rows="1"
+          cols="50"
+          class="author"
+          formControlName="author"
+        ></textarea>
+        <p class="summary-title">summary:</p>
+        <textarea
+          rows="10"
+          cols="50"
+          class="summary"
+          formControlName="summary"
+        ></textarea>
+      </div>
+    </div>
+    <div class="bottom">
+      <p class="review-title">Review:</p>
+      <textarea
+        rows="10"
+        cols="50"
+        class="review"
+        formControlName="review"
+      ></textarea>
+    </div>
+    <div class="btns">
+      <button type="submit">Save</button>
+      <button class="cancel-btn" (click)="articleService.reload()">Cancel</button>
+    </div>
+  </form>
+</div>
